@@ -1,0 +1,39 @@
+{
+  "name": "flow-check",
+  "version": "0.0.1",
+  "description": "Check and add Flow type support to javascript files",
+  "author": {
+    "name": "Charlie Jackson",
+    "email": "contact@charliejackson.com",
+    "url": "https://charliejackson.com"
+  },
+  "license": "MIT",
+  "keywords": "javascript, npm, node, flow",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cajacko/flow-check.git"
+  },
+  "homepage": "https://github.com/cajacko/flow-check#readme",
+  "scripts": {
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "lint": "eslint **/*.js",
+    "eslint": "eslint"
+  },
+  "engine": {
+    "node": ">=6.9.1"
+  },
+  "bugs": {
+    "email": "contact@charliejackson.com",
+    "url": "https://github.com/cajacko/flow-check/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "7.1.1",
+    "eslint": "3.17.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.0"
+  }
+}
