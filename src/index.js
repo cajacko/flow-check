@@ -8,13 +8,30 @@ if (shouldSkipCheck()) {
   flow();
 } else {
   const configPath = `${process.cwd()}/.flowcheck`;
-  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  let config;
+  let include = [
+    '**/*.js',
+    '!node_modules/**/*',
+    '!**/*.min.js',
+    '!public/**/*',
+    '!dist/**/*'
+  ];
 
-  if (!config.include) {
-    throw new Error('.flowcheck must have an includes property');
+  try {
+    config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  } catch (err) {
+    console.log('No .flowcheck file, using defaults');
   }
 
-  gulp.check(config.include, (nonFlowCount) => {
+  if (config) {
+    if (config.include) {
+      include = config.include;
+    } else {
+      throw new Error('.flowcheck must have an includes property');
+    }
+  }
+
+  gulp.check(include, (nonFlowCount) => {
     if (nonFlowCount === 0) {
       return flow();
     }
@@ -30,7 +47,7 @@ if (shouldSkipCheck()) {
       }
     ]).then((answers) => {
       if (answers.change) {
-        return gulp.change(config.include, () => flow(config['flow-bin']));
+        return gulp.change(include, () => flow());
       }
 
       return flow();
