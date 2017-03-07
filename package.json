@@ -4,6 +4,9 @@
   "description": "Check and add Flow type support to javascript files",
   "author": "Charlie Jackson <contact@charliejackson.com> (https://charliejackson.com)",
   "license": "MIT",
+  "bin": {
+    "flowcheck": "src/index.js"
+  },
   "keywords": [
     "javascript",
     "npm",
@@ -29,14 +32,6 @@
   "bugs": {
     "url": "https://github.com/cajacko/flow-check/issues",
     "email": "contact@charliejackson.com"
-  },
-  "devDependencies": {
-    "babel-eslint": "7.1.1",
-    "eslint": "3.17.0",
-    "eslint-config-airbnb": "14.1.0",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-jsx-a11y": "4.0.0",
-    "eslint-plugin-react": "6.10.0"
   },
   "main": "src/index.js",
   "dependencies": {
