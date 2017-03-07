@@ -57,6 +57,12 @@ function endLog(changing, done) {
     finalFlowCount = fileCount;
   }
 
+  if (fileCount === 0) {
+    console.log('');
+    console.log('No files were looked at');
+    return done(0);
+  }
+
   const coverage = Math.floor((finalFlowCount / fileCount) * 100);
 
   console.log('');
@@ -65,10 +71,11 @@ function endLog(changing, done) {
   const nonFlowCount = fileCount - finalFlowCount;
 
   if (done) {
-    done(nonFlowCount);
+    return done(nonFlowCount);
   }
-}
 
+  return true;
+}
 
 exports.check = function check(src, done) {
   fileCount = 0;
