@@ -33,6 +33,7 @@
             "initializing" //  Needed for Yeoman generators
           ]
         }
-      ]
+      ],
+      "no-console": "off"
   }
 }
