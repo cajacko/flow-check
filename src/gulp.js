@@ -83,8 +83,7 @@ exports.check = function check(src, done) {
 
   return gulp.src(src)
     .pipe(filter(false))
-    .pipe(gulp.dest('./')) // Needed otherwise .on('end') won't be called
-    .on('end', () => endLog(false, done));
+    .on('finish', () => endLog(false, done));
 };
 
 exports.change = function change(src, done) {
