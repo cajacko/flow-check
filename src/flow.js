@@ -13,5 +13,11 @@ module.exports = function flow() {
   let args = [cliPath];
   args = args.concat(getFlowArgs());
 
-  return spawn('node', args, { cwd: process.cwd(), stdio: 'inherit' });
+  const response = spawn('node', args, { cwd: process.cwd(), stdio: 'inherit' });
+
+  if (response.status !== 0) {
+    throw new Error('FLOW ERROR, SEE ABOVE FOR LOG');
+  }
+
+  return response;
 };
