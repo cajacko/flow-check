@@ -1,6 +1,6 @@
 {
   "name": "flow-check",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Check and add Flow type support to javascript files",
   "author": "Charlie Jackson <contact@charliejackson.com> (https://charliejackson.com)",
   "license": "MIT",
