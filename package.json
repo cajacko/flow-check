@@ -41,7 +41,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.10.0",
-    "flow-bin": "0.41.0",
+    "flow-bin": "0.66.0",
     "gulp": "3.9.1",
     "gulp-filter": "5.0.0",
     "gulp-header-license": "1.0.9",
