@@ -1,4 +1,7 @@
-# Flow Check
+# Flow Check - No Longer Maintained
+
+This project is no longer maintained and I'm pretty sure is broken now. It may be better to use eslint and the flowtype plugin: https://github.com/gajus/eslint-plugin-flowtype. With the `require-valid-file-annotation` rule on.
+
 
 An npm module that checks and adds:
 ```
